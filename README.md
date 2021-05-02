@@ -106,8 +106,9 @@ var fretes = query.ToList();
 
 Tradução SQL
 
-O ORM primeiro aplica uma query com o filtro UF = 'SC' com o mínimos join's necessários para resolver o problema, após isto limita os resultados e aplicar o join para obter os demais campos.  
-A query numa primeira visão parece maior que o necessário, mas está bem otimizada.
+O ORM primeiro aplica uma query com o filtro UF = 'SC' com os mínimos join's necessários para resolver a condição, após isto limita os resultados e aplica os demais join's para obter os demais campos.      
+A query numa primeira visão parece maior que o necessário, mas está bem otimizada.  
+Também vale resaltar o cache de plano de execução do DB que torna rápida a analise do comando enviado e a seleção dos indices necessários para execução (Embora o PostgreSQL não tenha tal recurso, a performance dele é ótima).
 
 ```sql
 SELECT t0."Id", t0."Valor", t0."Nome" AS "NomeRemetente", c1."Nome" AS "NomeDestinatario", t0."Nome0" AS "CidadeRemente", c2."Nome" AS "CidadeDestinatario"
