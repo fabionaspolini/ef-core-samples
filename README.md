@@ -43,9 +43,13 @@ dotnet ef database update 0
 dotnet ef migrations remove
 ```
 
+## DB
+
+![Diagrama](resources/diagrama.png)
+
 ## Queries
 
-LINQ Query
+C# Fluent LINQ Query
 
 ```csharp
 var query = conn.Fretes
