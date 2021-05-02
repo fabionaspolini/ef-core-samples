@@ -21,9 +21,12 @@ namespace ConsoleApp
             optionsBuilder.LogTo(Console.WriteLine);
 
             using var conn = new SampleContext(optionsBuilder.Options);
-            
+
             var query = conn.Fretes
                 .Where(x => x.Remetente.Cidade.UF == "SC")
+                .OrderByDescending(x => x.Valor)
+                .Take(10)
+                .Skip(30)
                 .Select(x => new
                 {
                     x.Id,
