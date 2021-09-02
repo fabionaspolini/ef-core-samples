@@ -37,7 +37,7 @@ namespace ConsoleApp
                     CidadeDestinatario = x.Destinatario.Cidade.Nome
                 });
             var fretes = query.ToList();
-            
+
             Console.WriteLine("Fim");
         }
     }
