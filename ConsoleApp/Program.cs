@@ -21,6 +21,7 @@ namespace ConsoleApp
             optionsBuilder.LogTo(Console.WriteLine);
 
             using var conn = new SampleContext(optionsBuilder.Options);
+            conn.Database.Migrate();
 
             var query = conn.Fretes
                 .Where(x => x.Remetente.Cidade.UF == "SC")
